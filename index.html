@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technovore — Présélection N2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+<!-- ══════════════════ LANDING ══════════════════ -->
+<div id="screen-landing" class="screen active">
+
+  <header class="nav">
+    <div class="nav-brand">
+      <span class="nav-badge">N2</span>
+      <span class="nav-name">Technovore Hackathon 2026</span>
+    </div>
+    <div class="nav-chips">
+      <span class="chip">⏱ 15s / question</span>
+      <span class="chip">100 questions</span>
+      <span class="chip">ESATIC × C2E</span>
+    </div>
+  </header>
+
+  <main class="landing-main">
+
+    <div class="hero">
+      <p class="hero-eyebrow">Présélection officielle · Niveau 2</p>
+      <h1 class="hero-title">Entraîne-toi.<br><em>Mesure-toi.</em></h1>
+      <p class="hero-sub">60 questions chronométrées. Clique directement sur un thème pour t'évaluer dessus.</p>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat-pill"><b>60</b><span>questions / session</span></div>
+      <div class="sdiv"></div>
+      <div class="stat-pill"><b>15s</b><span>par question</span></div>
+      <div class="sdiv"></div>
+      <div class="stat-pill"><b>100</b><span>bank total</span></div>
+      <div class="sdiv"></div>
+      <div class="stat-pill"><b>5</b><span>modes d'entraînement</span></div>
+    </div>
+
+    <!-- Thèmes — clic = lancement immédiat dans ce thème -->
+    <div class="themes-block">
+      <p class="block-label">Choisir un thème <em>— cliquer pour lancer l'entraînement ciblé</em></p>
+      <div class="themes-grid">
+
+        <button class="tcard tcard-mix" data-mode="mix">
+          <div class="tcard-top">
+            <span class="tcard-icon tc-i-mix">⊞</span>
+            <span class="tcard-go">→</span>
+          </div>
+          <div class="tcard-name">Mix complet</div>
+          <div class="tcard-desc">Tous les thèmes — simulation réelle</div>
+          <div class="tcard-count">60 questions</div>
+        </button>
+
+        <button class="tcard tcard-micro" data-mode="microservices">
+          <div class="tcard-top">
+            <span class="tcard-icon tc-i-micro">◈</span>
+            <span class="tcard-go">→</span>
+          </div>
+          <div class="tcard-name">Microservices</div>
+          <div class="tcard-desc">API REST, Architecture, Patterns</div>
+          <div class="tcard-count">~33 questions</div>
+        </button>
+
+        <button class="tcard tcard-ia" data-mode="ia">
+          <div class="tcard-top">
+            <span class="tcard-icon tc-i-ia">◎</span>
+            <span class="tcard-go">→</span>
+          </div>
+          <div class="tcard-name">IA & Machine Learning</div>
+          <div class="tcard-desc">ML, Deep Learning, NLP, LLM</div>
+          <div class="tcard-count">~34 questions</div>
+        </button>
+
+        <button class="tcard tcard-iot" data-mode="iot">
+          <div class="tcard-top">
+            <span class="tcard-icon tc-i-iot">◉</span>
+            <span class="tcard-go">→</span>
+          </div>
+          <div class="tcard-name">Réseaux & IoT</div>
+          <div class="tcard-desc">MQTT, LoRa, CoAP, Edge</div>
+          <div class="tcard-count">~33 questions</div>
+        </button>
+
+        <button class="tcard tcard-smart" data-mode="smart">
+          <div class="tcard-top">
+            <span class="tcard-icon tc-i-smart">⚡</span>
+            <span class="tcard-go">→</span>
+          </div>
+          <div class="tcard-name">Smart Systems</div>
+          <div class="tcard-desc">IoT avancé, Edge Computing</div>
+          <div class="tcard-count">Sous-domaine IoT</div>
+        </button>
+
+      </div>
+    </div>
+
+    <button class="btn-primary" id="btn-start">▶ &nbsp;Commencer — Mix complet</button>
+
+  </main>
+
+  <!-- Historique des sessions -->
+  <section id="history-section" class="history-section hidden">
+    <div class="history-head">
+      <span class="block-label" style="margin:0">Sessions précédentes</span>
+      <button class="btn-ghost" id="btn-clear-history">Tout effacer</button>
+    </div>
+    <div id="history-list" class="history-list"></div>
+  </section>
+
+</div><!-- /landing -->
+
+
+<!-- ══════════════════ QUIZ ══════════════════ -->
+<div id="screen-quiz" class="screen">
+
+  <div class="quiz-nav">
+    <span class="qnav-mode" id="quiz-mode-label">Mix</span>
+    <span class="qnav-counter" id="question-counter">1 / 60</span>
+    <span class="qnav-time" id="timer-label">15s</span>
+  </div>
+  <div class="timer-rail"><div class="timer-bar" id="timer-bar"></div></div>
+  <div class="progress-rail"><div class="progress-bar" id="progress-bar"></div></div>
+
+  <div class="quiz-body">
+    <article class="qcard" id="question-card">
+      <div class="qcard-meta">
+        <span class="qcat" id="category-badge">Catégorie</span>
+      </div>
+      <h2 class="qtext" id="question-text">Chargement...</h2>
+      <div class="options" id="options-container"></div>
+    </article>
+  </div>
+
+</div><!-- /quiz -->
+
+
+<!-- ══════════════════ RÉSULTATS ══════════════════ -->
+<div id="screen-results" class="screen">
+
+  <header class="rhead">
+    <div>
+      <div class="rhead-title">Résultats de session</div>
+      <div class="rhead-mode" id="results-mode-label">Mix complet</div>
+    </div>
+    <button class="btn-primary btn-sm" id="btn-replay">↩ Nouvelle session</button>
+  </header>
+
+  <div class="results-body">
+
+    <div class="score-panel">
+      <div class="gauge-wrap">
+        <canvas id="score-gauge" width="200" height="110"></canvas>
+        <div class="gauge-over">
+          <div class="gauge-num"><span id="score-number">0</span><span class="gauge-den" id="score-total">/60</span></div>
+          <div class="gauge-pct"><span id="score-percent">0</span>%</div>
+        </div>
+        <div class="gauge-lbl">Score final</div>
+      </div>
+
+      <div class="score-right">
+        <div class="verdict-area">
+          <span class="vtag">Verdict</span>
+          <div class="vval" id="verdict-text">—</div>
+          <div class="vsub" id="verdict-sub">—</div>
+        </div>
+        <div class="metrics">
+          <div class="met ok"><div class="mv" id="stat-correct">0</div><div class="ml">Corrects</div></div>
+          <div class="met er"><div class="mv" id="stat-wrong">0</div><div class="ml">Incorrects</div></div>
+          <div class="met sk"><div class="mv" id="stat-skipped">0</div><div class="ml">Passés</div></div>
+          <div class="met"><div class="mv" id="stat-time">0:00</div><div class="ml">Durée</div></div>
+          <div class="met"><div class="mv" id="stat-avg-time">0s</div><div class="ml">Moy/Q</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rsect">
+      <div class="rsect-label">Performance par domaine</div>
+      <div id="category-breakdown"></div>
+    </div>
+
+    <div class="rsect">
+      <div class="rsect-label">Révision complète</div>
+      <div class="table-wrap">
+        <table class="rtable">
+          <thead><tr><th>#</th><th>Domaine</th><th>Question</th><th>Statut</th></tr></thead>
+          <tbody id="review-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /results -->
+
+<script src="quiz.js"></script>
+</body>
+</html>
