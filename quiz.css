@@ -846,3 +846,50 @@ svg { display: block; }
   .metrics { grid-template-columns: repeat(2, 1fr); }
   .hero-title { font-size: 30px; }
 }
+
+/* ── Bouton Suivant ──────────────────────────────────────── */
+.next-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  min-height: 48px;
+}
+
+.btn-next {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: var(--r);
+  border: none;
+  cursor: pointer;
+  transition: all var(--ease);
+  letter-spacing: .02em;
+  animation: fade-up .22s ease forwards;
+}
+.btn-next.visible {
+  display: flex;
+}
+.btn-next:hover {
+  background: var(--accent-2);
+  transform: translateX(3px);
+  box-shadow: 0 4px 20px rgba(198,40,40,.4);
+}
+.btn-next-arrow {
+  font-size: 16px;
+  transition: transform var(--ease);
+}
+.btn-next:hover .btn-next-arrow { transform: translateX(3px); }
+.btn-next-hint {
+  font-family: var(--mono);
+  font-size: 9px;
+  background: rgba(255,255,255,.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: .06em;
+}

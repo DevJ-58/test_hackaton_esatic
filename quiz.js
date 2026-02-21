@@ -613,11 +613,506 @@ const QUESTION_BANK = [
     q: "Dans un projet de Smart Agriculture IoT, quel capteur est le plus pertinent pour optimiser l'irrigation ?",
     opts: ["Un capteur de luminosité (lux) pour l'ensoleillement", "Un capteur d'humidité du sol couplé à un système de déclenchement automatique", "Un capteur de CO2 atmosphérique", "Un capteur de pression barométrique"],
     ans: 1
-  }
+  },
+// ═══ MICROSERVICES (+10) ═══════════════════════════════════
+{
+  id:101, category:"Microservices",
+  q:"Quel pattern permet d'éviter les cascades de pannes entre microservices ?",
+  opts:["Saga pattern","Circuit Breaker","CQRS","Event Sourcing"],
+  ans:1
+},
+{
+  id:102, category:"Microservices",
+  q:"Dans une architecture microservices, qu'est-ce qu'un 'sidecar' ?",
+  opts:["Un proxy réseau externe","Un conteneur auxiliaire déployé avec le service principal","Un load balancer applicatif","Un service de découverte"],
+  ans:1
+},
+{
+  id:103, category:"Microservices",
+  q:"Le pattern 'Strangler Fig' est utilisé pour :",
+  opts:["Sécuriser les API internes","Migrer progressivement un monolithe vers des microservices","Orchestrer des transactions distribuées","Monitorer les dépendances de services"],
+  ans:1
+},
+{
+  id:104, category:"Microservices",
+  q:"Quelle est la différence principale entre l'orchestration et la chorégraphie dans les microservices ?",
+  opts:["L'orchestration est asynchrone, la chorégraphie est synchrone","L'orchestration centralise le contrôle, la chorégraphie distribue les événements","L'orchestration utilise REST, la chorégraphie utilise gRPC","Aucune différence fonctionnelle"],
+  ans:1
+},
+{
+  id:105, category:"Microservices",
+  q:"Qu'est-ce que le 'service mesh' dans un environnement microservices ?",
+  opts:["Un protocole de communication binaire","Une couche d'infrastructure qui gère la communication inter-services (trafic, sécurité, observabilité)","Un pattern de déploiement canary","Un format de sérialisation de données"],
+  ans:1
+},
+{
+  id:106, category:"Microservices",
+  q:"Le pattern 'Bulkhead' dans les microservices vise à :",
+  opts:["Chiffrer les communications entre services","Isoler les ressources pour éviter qu'une défaillance se propage","Centraliser les logs de tous les services","Balancer la charge entre plusieurs instances"],
+  ans:1
+},
+{
+  id:107, category:"Microservices",
+  q:"Qu'est-ce que le 'distributed tracing' dans les microservices ?",
+  opts:["Un système de contrôle de version distribué","La capacité de suivre une requête à travers plusieurs services via un identifiant de corrélation","Un mécanisme de consensus distribué","Un protocole de déploiement multi-région"],
+  ans:1
+},
+{
+  id:108, category:"Microservices",
+  q:"Dans quel cas préfère-t-on gRPC à REST pour les communications inter-microservices ?",
+  opts:["Quand les clients sont des navigateurs web","Quand on a besoin de hautes performances, de streaming bidirectionnel et de contrats stricts","Quand on veut une API publique facile à consommer","Quand les données sont principalement textuelles"],
+  ans:1
+},
+{
+  id:109, category:"Microservices",
+  q:"Le 'Health Check' pattern sert à :",
+  opts:["Vérifier la conformité RGPD des données","Exposer l'état de santé d'un service pour les load balancers et orchestrateurs","Chiffrer les flux de données sensibles","Détecter les injections SQL dans les requêtes"],
+  ans:1
+},
+{
+  id:110, category:"Microservices",
+  q:"Istio est principalement un outil de :",
+  opts:["Déploiement continu (CI/CD)","Service mesh pour Kubernetes offrant mTLS, routage, observabilité","Base de données distribuée","Registre de conteneurs Docker"],
+  ans:1
+},
+
+// ═══ API REST (+10) ═══════════════════════════════════════
+{
+  id:111, category:"API REST",
+  q:"Qu'est-ce que HATEOAS dans le contexte REST ?",
+  opts:["Un protocole de sécurité OAuth","Un niveau de maturité REST où l'API fournit des liens hypermedia pour guider le client","Un format de sérialisation binaire","Un mécanisme de rate limiting"],
+  ans:1
+},
+{
+  id:112, category:"API REST",
+  q:"Quel code HTTP retourner lors de la création réussie d'une ressource via POST ?",
+  opts:["200 OK","204 No Content","201 Created","202 Accepted"],
+  ans:2
+},
+{
+  id:113, category:"API REST",
+  q:"La différence entre PUT et PATCH en REST est :",
+  opts:["PUT est idempotent, PATCH ne l'est pas forcément; PUT remplace entièrement, PATCH modifie partiellement","PUT est pour créer, PATCH pour modifier","PUT est asynchrone, PATCH est synchrone","Aucune différence sémantique"],
+  ans:0
+},
+{
+  id:114, category:"API REST",
+  q:"Qu'est-ce qu'un 'idempotent' endpoint en REST ?",
+  opts:["Un endpoint qui compresse automatiquement les réponses","Un endpoint dont appels multiples identiques produisent le même résultat qu'un seul appel","Un endpoint qui cache les réponses côté client","Un endpoint qui authentifie automatiquement les requêtes"],
+  ans:1
+},
+{
+  id:115, category:"API REST",
+  q:"Le versioning d'API via le chemin (ex: /v1/users) a comme inconvénient principal :",
+  opts:["Complexité de parsing côté serveur","Violation du principe REST d'uniformité de l'URI pour une même ressource","Performance dégradée par le préfixe","Impossibilité de faire du rate limiting"],
+  ans:1
+},
+{
+  id:116, category:"API REST",
+  q:"Qu'est-ce que le format JSON:API ?",
+  opts:["Une alternative à REST basée sur JSON","Une spécification standardisant la structure des requêtes et réponses JSON pour les APIs","Un outil de génération de documentation","Un protocole de cache HTTP"],
+  ans:1
+},
+{
+  id:117, category:"API REST",
+  q:"Dans une API REST, le header 'ETag' sert à :",
+  opts:["Identifier le type MIME du contenu","Gérer la validation du cache et la concurrence optimiste via un token de version de ressource","Authentifier les requêtes API","Compresser les réponses volumineuses"],
+  ans:1
+},
+{
+  id:118, category:"API REST",
+  q:"OAuth 2.0 utilise quel flux pour une application mobile sans backend ?",
+  opts:["Authorization Code Flow","Implicit Flow","PKCE (Proof Key for Code Exchange)","Client Credentials Flow"],
+  ans:2
+},
+{
+  id:119, category:"API REST",
+  q:"Qu'est-ce que GraphQL apporte par rapport à REST ?",
+  opts:["Un typage fort obligatoire côté client","La possibilité pour le client de spécifier exactement les données dont il a besoin, évitant over/under-fetching","Une performance intrinsèquement meilleure que REST","Un remplacement du protocole HTTP"],
+  ans:1
+},
+{
+  id:120, category:"API REST",
+  q:"Le pattern 'Backend for Frontend' (BFF) consiste à :",
+  opts:["Générer le HTML côté serveur","Créer une couche API dédiée à chaque type de client (mobile, web, etc.)","Sécuriser le backend contre les injections","Mettre en cache les assets statiques côté serveur"],
+  ans:1
+},
+
+// ═══ ARCHITECTURE (+7) ════════════════════════════════════
+{
+  id:121, category:"Architecture",
+  q:"Qu'est-ce que le principe DRY en architecture logicielle ?",
+  opts:["Deployer Reliably Yourself","Don't Repeat Yourself — éviter la duplication de logique","Design Responsively for You","Distributed Resilient Architecture"],
+  ans:1
+},
+{
+  id:122, category:"Architecture",
+  q:"CQRS signifie :",
+  opts:["Command Query Responsibility Segregation — séparer lectures et écritures","Concurrent Queue Request System","Cached Query Resource Serving","Containerized Query Resolution Service"],
+  ans:0
+},
+{
+  id:123, category:"Architecture",
+  q:"L'Event Sourcing stocke :",
+  opts:["L'état final de chaque entité dans une base relationnelle","La séquence complète des événements qui ont conduit à l'état actuel","Les logs d'erreurs du système","Les métriques de performance en temps réel"],
+  ans:1
+},
+{
+  id:124, category:"Architecture",
+  q:"Dans une architecture hexagonale (ports & adapters), les 'ports' sont :",
+  opts:["Les ports TCP/IP utilisés pour les communications","Les interfaces définissant comment l'application interagit avec le monde extérieur","Les modules de sécurité réseau","Les configurations de load balancing"],
+  ans:1
+},
+{
+  id:125, category:"Architecture",
+  q:"Le Saga pattern gère :",
+  opts:["La mise en cache distribuée","Les transactions longues distribuées via une séquence de transactions locales compensables","Le routage des requêtes entre microservices","La synchronisation des réplicas de base de données"],
+  ans:1
+},
+{
+  id:126, category:"Architecture",
+  q:"Quelle est la différence entre scalabilité horizontale et verticale ?",
+  opts:["Horizontale = ajouter plus de CPU/RAM à un serveur; Verticale = ajouter plus de serveurs","Horizontale = ajouter plus de serveurs; Verticale = ajouter plus de CPU/RAM à un serveur","Horizontale concerne les bases de données, Verticale les applications","Pas de différence en pratique moderne"],
+  ans:1
+},
+{
+  id:127, category:"Architecture",
+  q:"Le théorème CAP stipule qu'un système distribué ne peut garantir simultanément que 2 des 3 propriétés. Lesquelles ?",
+  opts:["Cohérence, Authentification, Performance","Cohérence (Consistency), Disponibilité (Availability), Tolérance au partitionnement (Partition tolerance)","Concurrence, Atomicité, Persistance","Capacité, Accessibilité, Précision"],
+  ans:1
+},
+
+// ═══ MACHINE LEARNING (+12) ════════════════════════════════
+{
+  id:128, category:"Machine Learning",
+  q:"Qu'est-ce que la validation croisée (cross-validation) ?",
+  opts:["Un algorithme d'optimisation des hyperparamètres","Une technique d'évaluation qui divise les données en k sous-ensembles pour estimer la performance du modèle","Un type de régularisation pour éviter l'overfitting","Un mécanisme de normalisation des features"],
+  ans:1
+},
+{
+  id:129, category:"Machine Learning",
+  q:"Le 'bias-variance tradeoff' décrit :",
+  opts:["L'équilibre entre la vitesse d'entraînement et la précision","La tension entre un modèle trop simple (biais élevé) et trop complexe (variance élevée)","Le rapport entre les données positives et négatives","L'équilibre entre les features numériques et catégorielles"],
+  ans:1
+},
+{
+  id:130, category:"Machine Learning",
+  q:"Qu'est-ce que le 'feature engineering' ?",
+  opts:["La conception de l'architecture du modèle","Le processus de création et transformation de variables d'entrée pour améliorer les performances du modèle","L'optimisation des hyperparamètres par grid search","La réduction de la taille du dataset"],
+  ans:1
+},
+{
+  id:131, category:"Machine Learning",
+  q:"L'algorithme Random Forest est :",
+  opts:["Un réseau de neurones récurrent pour les séries temporelles","Un ensemble d'arbres de décision entraînés sur des sous-ensembles aléatoires des données","Un algorithme de clustering basé sur des centroïdes","Un modèle de régression avec régularisation L1"],
+  ans:1
+},
+{
+  id:132, category:"Machine Learning",
+  q:"Qu'est-ce que le 'data augmentation' ?",
+  opts:["L'ajout de bruit aux labels pour améliorer la robustesse","La création de données synthétiques ou transformées à partir des données existantes pour enrichir le dataset","L'élimination des données aberrantes du dataset","Le processus de normalisation des données"],
+  ans:1
+},
+{
+  id:133, category:"Machine Learning",
+  q:"Dans un problème de classification, la métrique F1-score est :",
+  opts:["La moyenne arithmétique de la précision et du rappel","La moyenne harmonique de la précision et du rappel","Le taux de vrais positifs parmi tous les positifs prédits","L'aire sous la courbe ROC"],
+  ans:1
+},
+{
+  id:134, category:"Machine Learning",
+  q:"L'algorithme XGBoost utilise principalement quelle technique ?",
+  opts:["Réseaux de neurones convolutifs","Gradient Boosting avec des arbres de décision en séquence","Clustering hiérarchique","Support Vector Machines avec noyaux polynomiaux"],
+  ans:1
+},
+{
+  id:135, category:"Machine Learning",
+  q:"Le 'transfer learning' consiste à :",
+  opts:["Transférer des données entre plusieurs clusters","Réutiliser un modèle pré-entraîné sur une tâche source pour accélérer l'apprentissage sur une tâche cible","Paralléliser l'entraînement sur plusieurs GPUs","Convertir un modèle d'un framework à un autre"],
+  ans:1
+},
+{
+  id:136, category:"Machine Learning",
+  q:"Qu'est-ce que le 'feature scaling' et pourquoi est-il important ?",
+  opts:["Réduire le nombre de features pour simplifier le modèle","Normaliser/standardiser les features pour que les algorithmes basés sur les distances ou les gradients convergent correctement","Sélectionner uniquement les features les plus corrélées à la cible","Encoder les features catégorielles en numériques"],
+  ans:1
+},
+{
+  id:137, category:"Machine Learning",
+  q:"L'algorithme DBSCAN est un algorithme de :",
+  opts:["Classification supervisée","Régression avec régularisation","Clustering basé sur la densité qui identifie des clusters de forme arbitraire","Réduction de dimensionnalité"],
+  ans:2
+},
+{
+  id:138, category:"Machine Learning",
+  q:"Qu'est-ce que la régularisation L1 (Lasso) ?",
+  opts:["Ajoute la somme des carrés des poids à la fonction de coût, favorisant les petits poids","Ajoute la somme des valeurs absolues des poids à la fonction de coût, favorisant les poids nuls (sparse)","Normalise les activations dans chaque couche du réseau","Réduit le taux d'apprentissage au fil du temps"],
+  ans:1
+},
+{
+  id:139, category:"Machine Learning",
+  q:"Un modèle qui performe très bien sur le dataset d'entraînement mais mal sur les données de test souffre de :",
+  opts:["Underfitting (sous-apprentissage)","Overfitting (sur-apprentissage)","Biais élevé","Manque de données"],
+  ans:1
+},
+
+// ═══ DEEP LEARNING (+8) ═══════════════════════════════════
+{
+  id:140, category:"Deep Learning",
+  q:"Les réseaux LSTM (Long Short-Term Memory) résolvent principalement quel problème ?",
+  opts:["La convergence lente des réseaux très profonds","Le problème de gradient qui disparaît dans les RNN traditionnels pour les longues séquences","L'overfitting dans les réseaux convolutifs","Le traitement des images en haute résolution"],
+  ans:1
+},
+{
+  id:141, category:"Deep Learning",
+  q:"Qu'est-ce que la 'batch normalization' ?",
+  opts:["Diviser le dataset en mini-batches pour l'entraînement","Normaliser les activations d'une couche pour stabiliser et accélérer l'entraînement","Normaliser les poids du réseau avant chaque époque","Un type de dropout appliqué aux batchs d'entrée"],
+  ans:1
+},
+{
+  id:142, category:"Deep Learning",
+  q:"Le mécanisme d'attention dans les Transformers permet :",
+  opts:["De réduire la complexité computationnelle quadratique des RNN","À chaque token de se concentrer sur les parties les plus pertinentes de la séquence en entrée","De paralléliser uniquement les couches de convolution","D'éliminer le besoin de normalisation des données"],
+  ans:1
+},
+{
+  id:143, category:"Deep Learning",
+  q:"Qu'est-ce qu'un GAN (Generative Adversarial Network) ?",
+  opts:["Un réseau récurrent pour la génération de texte","Un système de deux réseaux (générateur vs discriminateur) s'entraînant de manière compétitive pour générer des données réalistes","Un algorithme de clustering neuronal non-supervisé","Un réseau de neurones pour la détection d'anomalies"],
+  ans:1
+},
+{
+  id:144, category:"Deep Learning",
+  q:"Le 'dropout' dans les réseaux de neurones est une technique de :",
+  opts:["Accélération de l'entraînement par élagage des connexions faibles","Régularisation qui désactive aléatoirement des neurones pendant l'entraînement pour réduire l'overfitting","Optimisation de l'hyperparamètre du taux d'apprentissage","Compression du modèle pour l'inférence en production"],
+  ans:1
+},
+{
+  id:145, category:"Deep Learning",
+  q:"Qu'est-ce que le 'fine-tuning' d'un modèle pré-entraîné ?",
+  opts:["Convertir un modèle de float32 en float16","Continuer l'entraînement d'un modèle pré-entraîné sur un dataset spécifique pour l'adapter à une tâche cible","Supprimer les couches inutilisées du modèle","Optimiser les paramètres d'inférence du modèle"],
+  ans:1
+},
+{
+  id:146, category:"Deep Learning",
+  q:"Les réseaux convolutifs (CNN) utilisent les convolutions pour :",
+  opts:["Mémoriser des séquences longues","Extraire des features locales hiérarchiques avec partage de poids, particulièrement efficaces pour les images","Transformer les données textuelles en embeddings","Classer des séquences temporelles"],
+  ans:1
+},
+{
+  id:147, category:"Deep Learning",
+  q:"Qu'est-ce que le 'knowledge distillation' ?",
+  opts:["Extraire des connaissances d'un dataset non-structuré","Transférer les connaissances d'un grand modèle (teacher) vers un petit modèle (student) pour la compression","Agréger les connaissances de plusieurs modèles par averaging","Stocker le modèle entraîné dans un format optimisé"],
+  ans:1
+},
+
+// ═══ IA (+6) ══════════════════════════════════════════════
+{
+  id:148, category:"IA",
+  q:"Le 'Prompt Engineering' désigne :",
+  opts:["La programmation de modèles de langage depuis zéro","L'art de formuler des instructions précises pour guider un LLM vers les sorties souhaitées","La compression des modèles d'IA pour les edge devices","L'optimisation des GPU pour l'inférence de modèles"],
+  ans:1
+},
+{
+  id:149, category:"IA",
+  q:"Le 'Retrieval-Augmented Generation' (RAG) permet de :",
+  opts:["Entraîner un LLM sur des données propriétaires coûteusement","Augmenter les réponses d'un LLM avec des données pertinentes extraites d'une base documentaire sans ré-entraînement","Générer des images à partir de descriptions textuelles","Compresser les embeddings pour réduire l'espace de stockage"],
+  ans:1
+},
+{
+  id:150, category:"IA",
+  q:"Les embeddings vectoriels dans le NLP représentent :",
+  opts:["Le nombre de tokens dans un texte","Des représentations denses en haute dimension de mots/phrases capturant leur sémantique","Les statistiques d'occurrence des mots dans un corpus","Les scores de similarité entre deux documents"],
+  ans:1
+},
+{
+  id:151, category:"IA",
+  q:"Qu'est-ce que le 'hallucination' dans les LLM ?",
+  opts:["L'incapacité du modèle à traiter des images","La génération de contenu factuel incorrect mais présenté avec confiance","Une erreur de tokenization des caractères spéciaux","Un bug dans le mécanisme d'attention"],
+  ans:1
+},
+{
+  id:152, category:"IA",
+  q:"L'algorithme A* (A-star) est utilisé en IA pour :",
+  opts:["Entraîner des réseaux de neurones récurrents","Trouver le chemin optimal dans un graphe en combinant coût réel et heuristique","Classer des documents par pertinence sémantique","Générer des données synthétiques équilibrées"],
+  ans:1
+},
+{
+  id:153, category:"IA",
+  q:"Le 'reinforcement learning from human feedback' (RLHF) sert à :",
+  opts:["Collecter automatiquement des données d'entraînement depuis le web","Aligner les comportements d'un LLM avec les préférences humaines via des récompenses issues de jugements humains","Réduire les coûts d'inférence des modèles de langage","Détecter et filtrer les contenus toxiques générés"],
+  ans:1
+},
+
+// ═══ IoT (+15) ════════════════════════════════════════════
+{
+  id:154, category:"IoT",
+  q:"Le protocole MQTT utilise quel modèle de communication ?",
+  opts:["Client-Serveur REST","Publish-Subscribe via un broker","Peer-to-Peer direct","Request-Response synchrone"],
+  ans:1
+},
+{
+  id:155, category:"IoT",
+  q:"Quel est l'avantage principal de LoRaWAN par rapport au Wi-Fi pour l'IoT ?",
+  opts:["Débit de données plus élevé","Longue portée (jusqu'à 15km) avec très faible consommation d'énergie","Latence plus faible","Sécurité intrinsèquement meilleure"],
+  ans:1
+},
+{
+  id:156, category:"IoT",
+  q:"Le protocole CoAP (Constrained Application Protocol) est conçu pour :",
+  opts:["Les applications web à haute performance","Les dispositifs IoT contraints avec ressources limitées, inspiré de REST mais sur UDP","La communication Machine-to-Machine en temps réel via XMPP","Le streaming vidéo sur des réseaux bas débit"],
+  ans:1
+},
+{
+  id:157, category:"IoT",
+  q:"Dans un système IoT, qu'est-ce que l'edge computing ?",
+  opts:["Le traitement des données exclusivement dans le cloud centralisé","Le traitement des données au plus proche de la source (dispositif ou gateway) pour réduire latence et bande passante","Un protocole de chiffrement pour les données IoT","Une architecture de base de données pour les séries temporelles"],
+  ans:1
+},
+{
+  id:158, category:"IoT",
+  q:"Le standard Matter (ex-CHIP) dans l'IoT vise à :",
+  opts:["Créer un nouveau protocole de communication basse consommation","Unifier l'interopérabilité des appareils domotiques entre différents écosystèmes (Apple, Google, Amazon, etc.)","Standardiser les formats de données des capteurs industriels","Sécuriser les communications MQTT avec TLS automatique"],
+  ans:1
+},
+{
+  id:159, category:"IoT",
+  q:"Qu'est-ce qu'un 'twin digital' (digital twin) dans l'IoT industriel ?",
+  opts:["Un système de redondance pour les capteurs critiques","Une réplique virtuelle en temps réel d'un objet physique permettant simulation, analyse et optimisation","Un protocole de synchronisation bidirectionnelle entre capteurs","Un algorithme de compression pour les flux de données IoT"],
+  ans:1
+},
+{
+  id:160, category:"IoT",
+  q:"Le protocole Zigbee opère sur quelle bande de fréquence ?",
+  opts:["900 MHz uniquement","433 MHz","2.4 GHz (principalement)","5 GHz"],
+  ans:2
+},
+{
+  id:161, category:"IoT",
+  q:"Dans l'IoT industriel (IIoT), OPC-UA sert à :",
+  opts:["Optimiser la consommation énergétique des capteurs","Standardiser la communication entre machines industrielles de différents fabricants","Gérer les mises à jour firmware OTA des appareils","Chiffrer les communications Bluetooth Low Energy"],
+  ans:1
+},
+{
+  id:162, category:"IoT",
+  q:"Qu'est-ce que le 'Time Series Database' (TSDB) et pourquoi est-il utilisé en IoT ?",
+  opts:["Une base de données NoSQL pour les documents JSON","Une base de données optimisée pour les données horodatées et les requêtes temporelles sur les flux de capteurs","Un système de gestion de fichiers pour les firmwares IoT","Une base de données graphe pour les topologies réseau"],
+  ans:1
+},
+{
+  id:163, category:"IoT",
+  q:"Le Bluetooth Low Energy (BLE) se distingue du Bluetooth classique principalement par :",
+  opts:["Une portée 10x supérieure","Une consommation d'énergie drastiquement réduite, adapté aux capteurs à batterie","Un débit de données 5x supérieur","Une meilleure résistance aux interférences Wi-Fi"],
+  ans:1
+},
+{
+  id:164, category:"IoT",
+  q:"Qu'est-ce que le 'fog computing' ?",
+  opts:["Une variante de cloud computing utilisant des serveurs virtualisés","Une couche intermédiaire entre le cloud et les appareils IoT, distribuant le calcul à la périphérie du réseau","Un protocole de communication pour les villes intelligentes","Un système de chiffrement homomorphique pour données IoT"],
+  ans:1
+},
+{
+  id:165, category:"IoT",
+  q:"Dans un réseau LoRaWAN, quel est le rôle du 'Network Server' ?",
+  opts:["Collecter directement les données des capteurs","Gérer la déduplication des paquets, le routage et les paramètres radio des devices","Stocker les données des capteurs dans le cloud","Mettre à jour le firmware des devices LoRa"],
+  ans:1
+},
+{
+  id:166, category:"IoT",
+  q:"Le protocole AMQP (Advanced Message Queuing Protocol) est utilisé en IoT pour :",
+  opts:["La communication directe P2P entre capteurs","La messagerie robuste avec persistance, routage avancé et transactions, adapté aux architectures enterprise","Le streaming de données en temps réel basse latence","La configuration à distance des passerelles IoT"],
+  ans:1
+},
+{
+  id:167, category:"IoT",
+  q:"Qu'est-ce que l'OTA (Over-The-Air) update dans l'IoT ?",
+  opts:["Une technique de mesure de la qualité du signal radio","La mise à jour du firmware des appareils IoT à distance sans intervention physique","Un protocole de compression des données transmises","Un mécanisme d'authentification basé sur des tokens rotatifs"],
+  ans:1
+},
+{
+  id:168, category:"IoT",
+  q:"Dans un système IoT smart agriculture, le protocole LPWAN est préféré car :",
+  opts:["Il offre le débit le plus élevé pour la vidéo","Il combine longue portée et faible consommation, idéal pour des capteurs déployés sur de grandes surfaces sans infrastructure dense","Il est le seul protocole certifié pour les applications agricoles","Il permet la communication sous-terraine avec les capteurs d'humidité"],
+  ans:1
+},
+
+// ═══ RÉSEAUX (+12) ════════════════════════════════════════
+{
+  id:169, category:"Réseaux",
+  q:"Quelle est la différence entre un hub et un switch réseau ?",
+  opts:["Un hub est plus rapide car il diffuse directement","Un hub diffuse sur tous les ports; un switch apprend les adresses MAC et envoie les trames uniquement au port destination","Un switch fonctionne au niveau 3 OSI, un hub au niveau 2","Aucune différence fonctionnelle en réseau local moderne"],
+  ans:1
+},
+{
+  id:170, category:"Réseaux",
+  q:"Le protocole BGP (Border Gateway Protocol) est utilisé pour :",
+  opts:["La résolution DNS des noms de domaine","Le routage inter-AS (Autonomous Systems) sur Internet, permettant l'échange de routes entre opérateurs","La gestion des adresses IP sur un réseau local","La synchronisation du temps sur les équipements réseau"],
+  ans:1
+},
+{
+  id:171, category:"Réseaux",
+  q:"Qu'est-ce que le NAT (Network Address Translation) ?",
+  opts:["Un protocole de chiffrement des paquets IP","La traduction d'adresses IP privées en adresses IP publiques permettant à plusieurs appareils de partager une IP publique","Un mécanisme de QoS pour prioriser le trafic","Un protocole de gestion des VLANs"],
+  ans:1
+},
+{
+  id:172, category:"Réseaux",
+  q:"Le protocole TLS 1.3 apporte comme amélioration principale par rapport à TLS 1.2 :",
+  opts:["La suppression de l'authentification mutuelle","Un handshake réduit à 1-RTT (au lieu de 2), la suppression d'algorithmes obsolètes, et un mode 0-RTT","Un chiffrement plus fort basé sur des algorithmes post-quantiques","La compatibilité avec les très anciens clients"],
+  ans:1
+},
+{
+  id:173, category:"Réseaux",
+  q:"Qu'est-ce qu'un réseau SDN (Software-Defined Networking) ?",
+  opts:["Un réseau physique haute densité pour les datacenters","Une architecture séparant le plan de contrôle (logique) du plan de données (transfert), permettant la programmation centralisée du réseau","Un protocole de tunneling pour les VPNs d'entreprise","Un standard IEEE pour les réseaux sans fil industriels"],
+  ans:1
+},
+{
+  id:174, category:"Réseaux",
+  q:"Le protocole OSPF est utilisé pour :",
+  opts:["La sécurisation des échanges DNS","Le routage intra-AS à état de lien, calculant les meilleures routes via l'algorithme Dijkstra","La gestion des adresses IPv6 en autoconfiguration","L'authentification des équipements réseau"],
+  ans:1
+},
+{
+  id:175, category:"Réseaux",
+  q:"Qu'est-ce que la QoS (Quality of Service) dans les réseaux ?",
+  opts:["Une certification pour les équipements réseau","Un ensemble de mécanismes pour prioriser certains types de trafic (voix, vidéo) au détriment d'autres sur un réseau congestionné","Un protocole de surveillance des performances réseau","La capacité d'un réseau à auto-corriger les erreurs de transmission"],
+  ans:1
+},
+{
+  id:176, category:"Réseaux",
+  q:"Le protocole DHCP (Dynamic Host Configuration Protocol) est utilisé pour :",
+  opts:["Résoudre les noms de domaine en adresses IP","Attribuer automatiquement des adresses IP et paramètres réseau aux appareils se connectant","Sécuriser les communications entre serveurs","Gérer le routage dynamique dans les réseaux d'entreprise"],
+  ans:1
+},
+{
+  id:177, category:"Réseaux",
+  q:"Qu'est-ce qu'une attaque de type 'Man-in-the-Middle' (MitM) ?",
+  opts:["Une attaque par déni de service distribué","Une attaque où l'attaquant s'interpose dans la communication entre deux parties pour intercepter ou modifier les données","Une injection de code malicieux dans une base de données","Une attaque exploitant les débordements de buffer"],
+  ans:1
+},
+{
+  id:178, category:"Réseaux",
+  q:"Le protocole IPv6 adresse principalement quel problème d'IPv4 ?",
+  opts:["La latence élevée sur les longues distances","L'épuisement des adresses IP avec son espace d'adressage de 128 bits (vs 32 bits pour IPv4)","La vulnérabilité aux attaques DDoS","La complexité du routage inter-domaines"],
+  ans:1
+},
+{
+  id:179, category:"Réseaux",
+  q:"Un CDN (Content Delivery Network) améliore les performances en :",
+  opts:["Compressant les données à la source avant transmission","Distribuant le contenu sur des serveurs géographiquement proches des utilisateurs pour réduire la latence","Optimisant le code HTML/CSS/JS des sites web","Utilisant des algorithmes de cache en mémoire plus efficaces"],
+  ans:1
+},
+{
+  id:180, category:"Réseaux",
+  q:"La technique 'Zero Trust Security' dans les réseaux d'entreprise signifie :",
+  opts:["Désactiver tous les accès distants par défaut","Ne jamais faire confiance, toujours vérifier — chaque requête est authentifiée et autorisée indépendamment du réseau source","Utiliser uniquement des connexions chiffrées E2E","Restreindre l'accès réseau aux seules machines gérées par l'entreprise"],
+  ans:1
+}
 ];
 
 // ═══════════════════════════════════════════════════════════
-//  TECHNOVORE N2 — ENGINE
+//  TECHNOVORE N2 — ENGINE v3
 // ═══════════════════════════════════════════════════════════
 
 const MODE_CATS = {
@@ -636,13 +1131,19 @@ const MODE_LABELS = {
   smart:         'Smart Systems'
 };
 
-// Nombre de questions par session par défaut
-const TOTAL_QUESTIONS = 60;
+// Mix = 70, thèmes ciblés = 60
+const MODE_TOTAL = {
+  mix:           70,
+  microservices: 60,
+  ia:            60,
+  iot:           60,
+  smart:         60
+};
 
 const CAT_COLORS = {
-  'Microservices':'#C62828','API REST':'#C62828','Architecture':'#C62828',
-  'Machine Learning':'#FF7043','Deep Learning':'#FF7043','IA':'#FF7043',
-  'IoT':'#00BFA5','Réseaux':'#00BFA5'
+  'Microservices': '#C62828', 'API REST': '#C62828', 'Architecture': '#C62828',
+  'Machine Learning': '#FF7043', 'Deep Learning': '#FF7043', 'IA': '#FF7043',
+  'IoT': '#00BFA5', 'Réseaux': '#00BFA5'
 };
 
 const HISTORY_KEY = 'technovore_n2_history';
@@ -653,11 +1154,12 @@ const S = {
   mode:      'mix',
   questions: [],
   idx:       0,
-  selected:  null,
+  selected:  null,       // index sélectionné ou null
+  answered:  false,      // true = option choisie, en attente du bouton Suivant
   answers:   [],
   timer:     null,
   timeLeft:  15,
-  TOTAL:     TOTAL_QUESTIONS,
+  TOTAL:     70,         // mis à jour au démarrage
   DUR:       15,
   t0:        null,
   stats:     { correct:0, wrong:0, skipped:0, time:0, bycat:{} }
@@ -684,32 +1186,26 @@ function pickQuestions() {
     ? QUESTION_BANK.filter(q => cats.includes(q.category))
     : [...QUESTION_BANK];
 
-  // For mix mode (no cats) we want exactly TOTAL_QUESTIONS — pad if needed.
-  if (!cats && pool.length < TOTAL_QUESTIONS) {
+  // Pad if pool smaller than needed
+  if (pool.length < S.TOTAL) {
     const ids = new Set(pool.map(q=>q.id));
     const extra = shuffle(QUESTION_BANK.filter(q=>!ids.has(q.id)));
     pool = [...pool, ...extra];
   }
-
-  // Slice to the default target (TOTAL_QUESTIONS). For themed modes (cats present)
-  // this will naturally return fewer questions if the pool is smaller — we **do not**
-  // pad themed sessions with questions from other categories.
-  return shuffle(pool).slice(0, TOTAL_QUESTIONS).map(shuffleOpts);
+  return shuffle(pool).slice(0, S.TOTAL).map(shuffleOpts);
 }
 
 function ft(s) {
   return `${Math.floor(s/60)}:${(s%60).toString().padStart(2,'0')}`;
 }
-
 function fd(ts) {
   const d = new Date(ts);
   return d.toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'})
-    + ' · ' + d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+       + ' · ' + d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
 }
-
 function catColor(cat) { return CAT_COLORS[cat] || '#C62828'; }
 
-// ── Screen navigation ──────────────────────────────────────
+// ── Screen nav ─────────────────────────────────────────────
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   const el = document.getElementById(id);
@@ -722,14 +1218,12 @@ function getHistory() {
   try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; }
   catch { return []; }
 }
-
 function pushHistory(entry) {
   const h = getHistory();
   h.unshift(entry);
   if (h.length > MAX_HISTORY) h.length = MAX_HISTORY;
   try { localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); } catch {}
 }
-
 function renderHistory() {
   const sec  = document.getElementById('history-section');
   const list = document.getElementById('history-list');
@@ -740,7 +1234,7 @@ function renderHistory() {
   list.innerHTML = '';
 
   h.forEach(s => {
-    const pct   = Math.round((s.correct / s.total)*100);
+    const pct   = Math.round((s.correct/s.total)*100);
     const color = pct>=80?'#00BFA5': pct>=60?'#C62828': pct>=40?'#F59E0B':'#55556A';
     const el    = document.createElement('div');
     el.className = 'history-item';
@@ -751,7 +1245,7 @@ function renderHistory() {
       </div>
       <div class="history-scores">
         <span class="history-score" style="color:${color}">${s.correct}/${s.total}</span>
-        <span class="history-pct"  style="color:${color}">${pct}%</span>
+        <span class="history-pct"   style="color:${color}">${pct}%</span>
         <span class="history-dur">${ft(s.duration)}</span>
       </div>
       <div class="history-bar-track">
@@ -759,8 +1253,6 @@ function renderHistory() {
       </div>`;
     list.appendChild(el);
   });
-
-  // Animate bars after paint
   requestAnimationFrame(() => {
     document.querySelectorAll('.history-bar').forEach(b => {
       b.style.width = b.dataset.w + '%';
@@ -773,11 +1265,11 @@ function startQuiz(mode) {
   if (mode) S.mode = mode;
   clearInterval(S.timer);
 
+  S.TOTAL     = MODE_TOTAL[S.mode] || 60;
   S.questions = pickQuestions();
-  // Ajuste la taille de la session au nombre réel de questions sélectionnées
-  S.TOTAL = S.questions.length;
   S.idx       = 0;
   S.selected  = null;
+  S.answered  = false;
   S.answers   = [];
   S.t0        = Date.now();
   S.stats     = { correct:0, wrong:0, skipped:0, time:0, bycat:{} };
@@ -793,6 +1285,7 @@ function startQuiz(mode) {
 function renderQ() {
   const q = S.questions[S.idx];
   S.selected = null;
+  S.answered = false;
   S.timeLeft = S.DUR;
 
   // Progress & counter
@@ -822,6 +1315,10 @@ function renderQ() {
     cont.appendChild(btn);
   });
 
+  // Hide "Suivant" button initially
+  const nextBtn = document.getElementById('btn-next');
+  nextBtn.classList.remove('visible');
+
   // Slide-in animation
   const card = document.getElementById('question-card');
   card.classList.remove('anim');
@@ -831,25 +1328,53 @@ function renderQ() {
   startTimer();
 }
 
-// ── Pick answer ────────────────────────────────────────────
+// ── Pick answer — show Suivant button ─────────────────────
 function pick(i) {
-  if (S.selected !== null) return;
+  if (S.answered) return;   // évite double-clic
+  S.answered = true;
   S.selected = i;
+
+  clearInterval(S.timer);   // stopper le timer à la sélection
+
+  // Marquer visuellement
   document.querySelectorAll('.opt-btn').forEach((b, j) => {
     b.disabled = true;
     if (j === i) b.classList.add('selected');
   });
-  setTimeout(() => record(false), 220);
+
+  // Afficher le bouton Suivant
+  document.getElementById('btn-next').classList.add('visible');
 }
 
-// ── Timer ──────────────────────────────────────────────────
+// ── Keyboard shortcut: Enter = Suivant ────────────────────
+function handleNext() {
+  if (!S.answered) return;
+  document.getElementById('btn-next').classList.remove('visible');
+  record(false);
+}
+
+// ── Timer (continue même après sélection si pas répondu) ──
 function startTimer() {
   clearInterval(S.timer);
   updateTimer();
   S.timer = setInterval(() => {
     S.timeLeft--;
     updateTimer();
-    if (S.timeLeft <= 0) { clearInterval(S.timer); record(true); }
+    if (S.timeLeft <= 0) {
+      clearInterval(S.timer);
+      if (!S.answered) {
+        // Temps écoulé sans réponse : passer automatiquement
+        S.answered = true;
+        document.querySelectorAll('.opt-btn').forEach(b => b.disabled = true);
+        // Afficher brièvement Suivant puis avancer
+        const nb = document.getElementById('btn-next');
+        nb.classList.add('visible');
+        setTimeout(() => {
+          nb.classList.remove('visible');
+          record(true);
+        }, 800);
+      }
+    }
   }, 1000);
 }
 
@@ -866,8 +1391,7 @@ function updateTimer() {
 
 // ── Record answer ──────────────────────────────────────────
 function record(expired) {
-  clearInterval(S.timer);
-  const q = S.questions[S.idx];
+  const q  = S.questions[S.idx];
   const ok = S.selected !== null && S.selected === q.ans;
   const t  = S.DUR - S.timeLeft;
 
@@ -877,20 +1401,15 @@ function record(expired) {
     ok, expired: expired && S.selected===null, t
   });
 
-  if (ok)                    S.stats.correct++;
+  if (ok)                     S.stats.correct++;
   else if (S.selected===null) S.stats.skipped++;
-  else                       S.stats.wrong++;
+  else                        S.stats.wrong++;
 
-  S.stats.time += t;
+  S.stats.time += Math.max(t, 0);
   if (!S.stats.bycat[q.category]) S.stats.bycat[q.category] = {ok:0,n:0};
   S.stats.bycat[q.category].n++;
   if (ok) S.stats.bycat[q.category].ok++;
 
-  if (expired && S.selected===null) advance();
-  else setTimeout(advance, 220);
-}
-
-function advance() {
   S.idx++;
   if (S.idx >= S.TOTAL) showResults();
   else renderQ();
@@ -905,7 +1424,6 @@ function showResults() {
   const score   = S.stats.correct;
   const pct     = Math.round((score/S.TOTAL)*100);
 
-  // Save to history
   pushHistory({
     date: Date.now(),
     mode: S.mode,
@@ -918,21 +1436,18 @@ function showResults() {
     bycat: S.stats.bycat
   });
 
-  // Mode label
   const rl = document.getElementById('results-mode-label');
-  if (rl) rl.textContent = MODE_LABELS[S.mode];
+  if (rl) rl.textContent = `${MODE_LABELS[S.mode]} — ${S.TOTAL} questions`;
 
-  // Numbers
   document.getElementById('score-total').textContent = `/${S.TOTAL}`;
-  anim('score-number', 0, score, 1200);
-  anim('score-percent', 0, pct, 1200);
+  anim('score-number',  0, score,  1200);
+  anim('score-percent', 0, pct,    1200);
 
-  // Verdict
   const vv = document.getElementById('verdict-text');
   const vs = document.getElementById('verdict-sub');
   if (pct>=80)      { vv.textContent='Excellent';   vs.textContent='Tu es prêt pour la présélection.'; vv.style.color='#00BFA5'; }
-  else if (pct>=60) { vv.textContent='Bon niveau';  vs.textContent='Continue — affine les thèmes faibles.'; vv.style.color='#C62828'; }
-  else if (pct>=40) { vv.textContent='À renforcer'; vs.textContent="Intensifie l'entraînement ciblé."; vv.style.color='#F59E0B'; }
+  else if (pct>=60) { vv.textContent='Bon niveau';  vs.textContent='Continue — affine tes points faibles.'; vv.style.color='#C62828'; }
+  else if (pct>=40) { vv.textContent='À renforcer'; vs.textContent="Entraîne-toi sur les thèmes ciblés."; vv.style.color='#F59E0B'; }
   else              { vv.textContent='Insuffisant'; vs.textContent='Revois les fondamentaux et recommence.'; vv.style.color='#55556A'; }
 
   document.getElementById('stat-correct').textContent  = score;
@@ -947,8 +1462,7 @@ function showResults() {
 }
 
 function anim(id, from, to, dur) {
-  const el = document.getElementById(id);
-  const t0 = performance.now();
+  const el = document.getElementById(id), t0 = performance.now();
   const tick = now => {
     const p = Math.min((now-t0)/dur, 1);
     el.textContent = Math.round(from+(to-from)*(1-Math.pow(1-p,3)));
@@ -963,10 +1477,8 @@ function drawGauge(pct) {
   const ctx = cv.getContext('2d');
   const cx=cv.width/2, cy=cv.height/2, r=cx-14;
   ctx.clearRect(0,0,cv.width,cv.height);
-
   ctx.beginPath(); ctx.arc(cx,cy,r,Math.PI,2*Math.PI);
   ctx.strokeStyle='#1C1C27'; ctx.lineWidth=12; ctx.lineCap='round'; ctx.stroke();
-
   const col = pct>=80?'#00BFA5': pct>=60?'#C62828': pct>=40?'#F59E0B':'#444';
   ctx.beginPath(); ctx.arc(cx,cy,r,Math.PI,Math.PI+(pct/100)*Math.PI);
   ctx.strokeStyle=col; ctx.lineWidth=12; ctx.lineCap='round'; ctx.stroke();
@@ -1001,7 +1513,7 @@ function renderTable() {
   S.answers.forEach((a,i) => {
     const tr  = document.createElement('tr');
     const cls = a.ok?'st-ok': a.expired?'st-skip':'st-err';
-    const lbl = a.ok?'Correct': a.expired?'Passé':'Incorrect';
+    const lbl = a.ok?'✓ Correct': a.expired?'⏱ Passé':'✗ Incorrect';
     tr.innerHTML = `
       <td class="td-num">${i+1}</td>
       <td class="td-cat"><span class="tbadge" style="border-color:${catColor(a.cat)};color:${catColor(a.cat)}">${a.cat}</span></td>
@@ -1013,17 +1525,18 @@ function renderTable() {
 
 // ── Init ───────────────────────────────────────────────────
 function init() {
-  // Bouton CTA → Mix
+  // CTA principal → mix 70Q
   document.getElementById('btn-start').addEventListener('click', () => startQuiz('mix'));
 
-  // Clic thème → lancement direct dans ce thème
+  // Clic thème → lancement direct
   document.querySelectorAll('.tcard').forEach(btn => {
-    btn.addEventListener('click', () => {
-      startQuiz(btn.dataset.mode);
-    });
+    btn.addEventListener('click', () => startQuiz(btn.dataset.mode));
   });
 
-  // Replay → retour home
+  // Bouton Suivant
+  document.getElementById('btn-next').addEventListener('click', handleNext);
+
+  // Replay
   document.getElementById('btn-replay').addEventListener('click', () => {
     renderHistory();
     showScreen('screen-landing');
@@ -1037,13 +1550,18 @@ function init() {
     }
   });
 
-  // Raccourcis clavier
+  // Clavier : 1-4 pour sélectionner, Entrée pour Suivant
   document.addEventListener('keydown', e => {
     if (!document.getElementById('screen-quiz').classList.contains('active')) return;
-    if (['1','2','3','4'].includes(e.key)) pick(parseInt(e.key)-1);
+    if (!S.answered && ['1','2','3','4'].includes(e.key)) {
+      pick(parseInt(e.key)-1);
+    }
+    if (S.answered && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault();
+      handleNext();
+    }
   });
 
-  // Init history
   renderHistory();
 }
 
